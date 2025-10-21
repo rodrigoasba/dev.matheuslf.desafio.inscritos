@@ -18,5 +18,5 @@ public class ProjectRequestDTO {
     private String name;
     private String description;
     private LocalDateTime endDate;
-    private List<TaskResquestDTO> tasks;
+    private List<TaskRequestDTO> task;
 }

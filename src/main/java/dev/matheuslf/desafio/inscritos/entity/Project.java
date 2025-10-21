@@ -31,6 +31,6 @@ public class Project {
 
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
-    private List<Task> tasks = new ArrayList<Task>();
+    private List<Task> task = new ArrayList<Task>();
 
 }

@@ -20,5 +20,4 @@ public class TaskResponseDTO {
     private Status status;
     private Priority priority;
     private LocalDateTime dueDate;
-    private Long projectId;
 }

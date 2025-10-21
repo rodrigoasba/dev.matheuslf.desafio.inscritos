@@ -19,5 +19,5 @@ public class ProjectResponseDTO {
     private String description;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
-    private List<TaskResponseDTO> tasks;
+    private List<TaskResponseDTO> task;
 }

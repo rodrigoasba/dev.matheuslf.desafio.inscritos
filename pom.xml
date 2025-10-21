@@ -28,6 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>17</java.version>
+        <versao.mapstruct>1.6.0</versao.mapstruct>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -76,6 +77,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${versao.mapstruct}</version>
+        </dependency>
 	</dependencies>
 
 	<build>

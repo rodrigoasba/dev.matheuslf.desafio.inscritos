@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
-public class TaskResquestDTO {
+public class TaskRequestDTO {
 
     @NotBlank(message = "O título da tarefa é obrigatório")
     private String title;

@@ -25,8 +25,8 @@ public class ProjectService {
         project.setDescription(dto.getDescription());
         project.setEndDate(dto.getEndDate());
 
-        if(dto.getTasks() != null && !dto.getTasks().isEmpty()) {
-            List<Task> tasks = dto.getTasks().stream().map(taskDTO -> {
+        if(dto.getTask() != null && !dto.getTask().isEmpty()) {
+            List<Task> tasks = dto.getTask().stream().map(taskDTO -> {
                 Task task = new Task();
                 task.setTitle(taskDTO.getTitle());
                 task.setDescription(taskDTO.getDescription());
@@ -36,12 +36,16 @@ public class ProjectService {
                 task.setProject(project);
                 return task;
             }).collect(Collectors.toList());
-            project.setTasks(tasks);
+            project.setTask(tasks);
         }
         return toResponseDTO(projectRepository.save(project));
     }
 
-
+    public List<ProjectResponseDTO> findAll(){
+        return projectRepository.findAll().stream()
+                .map(this::toResponseDTO)
+                .collect(Collectors.toList());
+    }
 
     private ProjectResponseDTO toResponseDTO(Project project) {
         ProjectResponseDTO dto = new ProjectResponseDTO();
@@ -50,9 +54,9 @@ public class ProjectService {
         dto.setDescription(project.getDescription());
         dto.setStartDate(project.getStartDate());
         dto.setEndDate(project.getEndDate());
-        dto.setTasks(
-                project.getTasks() != null
-                        ? project.getTasks().stream().map(task -> {
+        dto.setTask(
+                project.getTask() != null
+                        ? project.getTask().stream().map(task -> {
                     var taskDTO = new TaskResponseDTO();
                     taskDTO.setId(task.getId());
                     taskDTO.setTitle(task.getTitle());
